@@ -5,24 +5,24 @@ use Pecee\Http\Url;
 use Pecee\Http\Response;
 use Pecee\Http\Request;
 
-/**
- * Zwaraca url ścieżny uczywajac nazwy, aliara, klasy lub nazwy metody
- *
- * Parametr wspiera następujące wartości
- * - Nazwa ścieżki
- * - Controller/nazwa zasobu (z lub bez metody)
- * - Nazwa klasy kontrollera
- *
- * @param string|null $name
- * @param string|array|null $parameters
- * @param array|null $getParams
- * @return \Pecee\Http\Url
- * @throws \InvalidArgumentException
- */
-function url(?string $name = null, $parameters = null, ?array $getParams = null): Url
-{
-    return Router::getUrl($name, $parameters, $getParams);
-}
+// /**
+//  * Zwaraca url ścieżny uczywajac nazwy, aliara, klasy lub nazwy metody
+//  *
+//  * Parametr wspiera następujące wartości
+//  * - Nazwa ścieżki
+//  * - Controller/nazwa zasobu (z lub bez metody)
+//  * - Nazwa klasy kontrollera
+//  *
+//  * @param string|null $name
+//  * @param string|array|null $parameters
+//  * @param array|null $getParams
+//  * @return \Pecee\Http\Url
+//  * @throws \InvalidArgumentException
+//  */
+// function url(?string $name = null, $parameters = null, ?array $getParams = null): Url
+// {
+//     return Router::getUrl($name, $parameters, $getParams);
+// }
 
 /**
  * @return \Pecee\Http\Response

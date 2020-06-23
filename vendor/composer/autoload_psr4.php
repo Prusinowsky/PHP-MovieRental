@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Views\\' => array($baseDir . '/views'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Contracts\\Translation\\' => array($vendorDir . '/symfony/translation-contracts'),
+    'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'PhpDocReader\\' => array($vendorDir . '/php-di/phpdoc-reader/src/PhpDocReader'),
     'Pecee\\' => array($vendorDir . '/pecee/simple-router/src/Pecee'),
@@ -15,4 +18,5 @@ return array(
     'Invoker\\' => array($vendorDir . '/php-di/invoker/src'),
     'DI\\' => array($vendorDir . '/php-di/php-di/src'),
     'Controllers\\' => array($baseDir . '/controllers'),
+    '' => array($vendorDir . '/nesbot/carbon/src'),
 );
