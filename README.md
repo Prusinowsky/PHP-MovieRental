@@ -1,7 +1,5 @@
 # PHP-Project
 
-Dzień dobry,
-chciałbym zapytać jaka byłaby cena projektu aplikacji internetowej.
 Temat to "Wypożyczalnia filmów", bez konkretnych wytycznych odnośnie content, jedynie struktura i wykonanie są punktowane.
 Podaje wytyczne, termin do końca czerwca:
 Kryteria oceny projektu
