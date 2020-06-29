@@ -2,6 +2,8 @@
     use Pecee\SimpleRouter\SimpleRouter as Router;
 ?>
 
+<!-- Plik zawierający nagłówej naszej strony -->
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">Wypożyczalnia Filmów</a>

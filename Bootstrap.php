@@ -1,12 +1,23 @@
 <?php
 
+/**
+ * Ładowanie paczek osób 3-ch użytych w celu budowy naszej aplikacji,
+ * są to takie paczki jak SimpleRouter oraz MeekerDB
+ */
 require 'vendor/autoload.php';
 
 use Pecee\SimpleRouter\SimpleRouter;
-use Illuminate\Database\Capsule\Manager as Capsule;
-  
+use Illuminate\Database\Capsule\Manager as Capsule;  
+
+/**
+ * Definicja wszystki stałych potrzebnych do działania naszej aplikacji
+ */
 define('APP_PATH', __DIR__);
 define('APP_PUBLIC_PATH', __DIR__.'/public');
+
+/**
+ * Definicja wszystki zmiennych globalnych potrzebnych do działania naszej aplikacji
+ */
 
 global $db;
 global $config;

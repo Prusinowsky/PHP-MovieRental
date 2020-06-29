@@ -2,6 +2,8 @@
     use Pecee\SimpleRouter\SimpleRouter as Router;
 ?>
 
+<!-- Plik zawierający formularz edycji nowego wpisu do bazy danych filmu -->
+
 <html>
     <head>
         <?php view_include('global/head.view.php') ?>

@@ -1,3 +1,6 @@
+
+<!-- Główny plik z nagłówkami naszej aplikacji -->
+
 <title>Movie Rental</title>
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">

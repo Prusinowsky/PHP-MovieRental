@@ -2,6 +2,9 @@
 
 use Pecee\SimpleRouter\SimpleRouter;
 
+/**
+ * Główny plik zawierający wszystkie ścieżki obsługiwane przez naszą aplikację
+ */
 SimpleRouter::get('/', '\Controllers\IndexController@index');
 SimpleRouter::get('/movies', '\Controllers\MovieController@index')->name('movies');
 SimpleRouter::get('/movie/create', '\Controllers\MovieController@create')->name('movie.create');

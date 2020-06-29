@@ -2,6 +2,8 @@
     use Pecee\SimpleRouter\SimpleRouter as Router;
 ?>
 
+<!-- Plik zawierający wygląd naszej aplikacji -->
+
 <html>
     <head>
         <?php view_include('global/head.view.php') ?>

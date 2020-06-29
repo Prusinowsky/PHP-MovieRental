@@ -4,8 +4,14 @@ namespace Controllers;
 
 use \Pecee\SimpleRouter\SimpleRouter as Router;
 
+/**
+ * Kontroler odpowiadającyza obsługę filmów
+ */
 class MovieController {
 
+    /**
+     * Metoda wyświetlająca wszystkie filmy z bazy danych
+     */
     public function index(){
         global $db;
         $movies = $db->query("SELECT * FROM `movies`");
@@ -15,10 +21,16 @@ class MovieController {
         ]);
     }
 
+    /**
+     * Metoda pokazująca formularz do stworzenia nowego wpisu do bazy danych
+     */
     public function create(){
         return view('movie/create.view.php');
     }
 
+    /**
+     * Metoda odpowiadająca za zapisanie nowego filmu do bazy danych
+     */
     public function store(){
         $title = \input()->post('title');
         $description = \input()->post('description');
@@ -34,7 +46,7 @@ class MovieController {
         if($photo->hasError())
             $errors[] = "Nie przesłano zdjęcia";
 
-        if(count($errors) && !in_array($photo->getExtension(),['jpg', 'jpeg',  'png']))
+        if(!in_array($photo->getExtension(),['jpg', 'jpeg',  'png']))
             $errors[] = "Nieprawidłowe rozszerzenie pliku: Powinno być .jpg, .jpeg, .png";
         
         $photoPath = '/uploads/'.uniqid().'.'.$photo->getExtension();
@@ -59,6 +71,9 @@ class MovieController {
         
     }
 
+    /**
+     * Metoda odpowiadająca za wyświetlenie edycji filmu
+     */
     public function edit(){
         $id = (int)\request()->getLoadedRoute()->getParameters('id')['id'];
 
@@ -71,6 +86,9 @@ class MovieController {
         ]);
     }
 
+    /**
+     * Metoda odpowiadająca za edycję wpisu w bazie danych
+     */
     public function update(){
         $errors = [];
         $success = [];
@@ -121,10 +139,11 @@ class MovieController {
                 'movie' => $movie,
                 'sucess' => $success
             ]);    
-
-        //return \redirect(Router::getUrl('movies'));
     }
 
+    /**
+     * Metoda odpowaidająca za usuwanie filmu z bazy danych wraz z jego grafiką
+     */
     public function destroy(){
         $id = (int)\request()->getLoadedRoute()->getParameters('id')['id'];
 
