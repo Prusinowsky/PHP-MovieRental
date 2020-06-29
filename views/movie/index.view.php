@@ -12,7 +12,6 @@
             <div class="mr-header">
                 <h1>Witaj! </h1>
                 <p>Sprawdź nasze filmy, które możesz u nas wypożyczyć. Jest ich trochę, możesz znaleźć je niżej.</p>
-                <a class="btn btn-success" href="<?php echo Router::getUrl('movie.create'); ?>">Dodaj film</a>
             </div>
             <div class="mr-movies d-flex justify-content-center flex-wrap">
                 <?php foreach($movies as $key => $movie) : ?>
@@ -21,7 +20,9 @@
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $movie['title'] ?></h5>
                         <p class="card-text"><?php echo $movie['description'] ?></p>
-                        <a href="#" class="btn btn-primary">Wypożycz</a>
+                        <a href="#" class="btn btn-sm btn-primary">Wypożycz</a>
+                        <a href="<?php echo Router::getUrl('movie.edit', ['id' => $movie['id']]); ?>" class="btn btn-sm btn-success">Edytuj</a>
+                        <a href="<?php echo Router::getUrl('movie.delete', ['id' => $movie['id']]); ?>" class="btn btn-sm btn-danger">Usuń</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

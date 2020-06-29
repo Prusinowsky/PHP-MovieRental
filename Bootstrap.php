@@ -12,11 +12,11 @@ global $db;
 global $config;
 global $router;
 
-// Ładowanie zewnętrznych plików ścieżek
-require_once 'routes/web.php';
-
 // Ładowanie konfiguracji
 $config = require_once('configs/config.php');
+
+// Ładowanie zewnętrznych plików ścieżek
+require_once 'routes/web.php';
 
 // Ustawianie połączenia z bazą danych
 $db = new \MeekroDB(

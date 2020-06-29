@@ -1,3 +1,7 @@
+<?php 
+    use Pecee\SimpleRouter\SimpleRouter as Router;
+?>
+
 <html>
     <head>
         <?php view_include('global/head.view.php') ?>
@@ -6,22 +10,35 @@
         <?php view_include('global/navbar.view.php'); ?>
         <div class="mr-header mt-5 d-block container">
             <div class="mr-header">
-                <h1>Witaj, <?php echo $name; ?>! </h1>
-                <p>Sprawdź nasze filmy, które możesz u nas wypożyczyć. Jest ich trochę, możesz znaleźć je niżej.</p>
+            <h1>Edytuj</h1>
+                <p>Wypełnij formularz aby edytować film.</p>
             </div>
-            <div class="mr-movies d-flex justify-content-center flex-wrap">
-                <?php foreach([1,2,3,4,5,6,7,8,9, 10] as $key) : ?>
-                <div class="mr-movie card m-2" style="width: 18rem;">
-                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Tytuł filmu</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Wypożycz</a>
-                    </div>
+            <?php // Success ?>
+            <?php $successes = isset($successes) ? $successes : []; ?>
+            <?php foreach($successes as $success): ?>
+                <div class="alert alert-succes" role="alert"><?php echo $success ?></div>
+            <?php endforeach; ?>
+            <?php // Errors ?>
+            <?php $errors = isset($errors) ? $errors : []; ?>
+            <?php foreach($errors as $error): ?>
+                <div class="alert alert-warning" role="alert"><?php echo $error ?></div>
+            <?php endforeach; ?>
+            <form action="<?php echo Router::getUrl('movie.update', ['id' => $id]); ?>" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Tytuł</label>
+                    <input class="form-control" id="title" name="title" type="text" placeholder="Tytuł" value="<?php echo $movie['title'] ?>">
                 </div>
-                <?php endforeach; ?>
-            </div>
+                <div class="form-group">
+                    <label for="description">Opis filmu</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"><?php echo $movie['description'] ?></textarea>
+                </div>
+                <div class="form-group">
+                    <img class="img-thumbnail" src="<?php echo $movie['photo'] ?>"/><p>&nbsp;</p>
+                    <label for="photo">Wybierz zdjęcie</label>
+                    <input type="file" class="form-control-file" name="photo" id="photo">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Zapisz</button>
+            </form>
         </div>
     </body>
 </html>
-  

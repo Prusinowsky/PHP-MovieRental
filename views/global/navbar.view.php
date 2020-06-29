@@ -1,3 +1,7 @@
+<?php 
+    use Pecee\SimpleRouter\SimpleRouter as Router;
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">Wypożyczalnia Filmów</a>
@@ -11,7 +15,7 @@
                     <a class="nav-link" href="/">Strona główna <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/movie/add">Dodaj film</a>
+                    <a class="nav-link" href="<?php echo Router::getUrl('movie.create'); ?>">Dodaj film</a>
                 </li>
             </ul>
         </div>

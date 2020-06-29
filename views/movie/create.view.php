@@ -1,3 +1,7 @@
+<?php 
+    use Pecee\SimpleRouter\SimpleRouter as Router;
+?>
+
 <html>
     <head>
         <?php view_include('global/head.view.php') ?>
@@ -9,7 +13,11 @@
             <h1>Dodaj</h1>
                 <p>Wypełnij formularz aby dodać film.</p>
             </div>
-            <form action="/movie" method="POST" enctype="multipart/form-data">
+            <?php $errors = isset($errors) ? $errors : []; ?>
+            <?php foreach($errors as $error): ?>
+                <div class="alert alert-warning" role="alert"><?php echo $error ?></div>
+            <?php endforeach; ?>
+            <form action="<?php echo Router::getUrl('movie.store'); ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">Tytuł</label>
                     <input class="form-control" id="title" name="title" type="text" placeholder="Tytuł">
