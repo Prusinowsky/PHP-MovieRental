@@ -77,8 +77,6 @@ class MovieController {
         $id = (int)\request()->getLoadedRoute()->getParameters('id')['id'];
         if($id <= 0) $errors[] = "Błędny identyfikator posta";
 
-        
-
         $title = \input()->post('title');
         $title = \filter_var($title, FILTER_SANITIZE_STRING);
         if(!$title) $errors[] = "Brak tytułu";
@@ -132,6 +130,9 @@ class MovieController {
         $confirmed = (bool)\input()->get('confirmed');
 
         global $db;
+        $movie = $db->queryFirstRow("SELECT * FROM `movies` WHERE `id` = ".$id);
+        if(strlen($movie['photo'])) \unlink(APP_PUBLIC_PATH.$movie['photo']);
+
         $result = $db->query("DELETE FROM `movies` WHERE `movies`.`id` = {$id}");
 
         return \redirect(Router::getUrl('movies'));
