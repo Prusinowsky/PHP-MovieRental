@@ -22,7 +22,7 @@
                         <p class="card-text"><?php echo $movie['description'] ?></p>
                         <!-- <a href="#" class="btn btn-sm btn-primary">Wypożycz</a> -->
                         <a href="<?php echo Router::getUrl('movie.edit', ['id' => $movie['id']]); ?>" class="btn btn-sm btn-success">Edytuj</a>
-                        <a href="<?php echo Router::getUrl('movie.delete', ['id' => $movie['id']]); ?>" class="btn btn-sm btn-danger">Usuń</a>
+                        <a href="<?php echo Router::getUrl('movie.delete', ['id' => $movie['id']]); ?>" class="btn btn-sm btn-danger movie-delete">Usuń</a>
                     </div>
                 </div>
                 <?php endforeach; ?>

@@ -127,7 +127,6 @@ class MovieController {
 
     public function destroy(){
         $id = (int)\request()->getLoadedRoute()->getParameters('id')['id'];
-        $confirmed = (bool)\input()->get('confirmed');
 
         global $db;
         $movie = $db->queryFirstRow("SELECT * FROM `movies` WHERE `id` = ".$id);
