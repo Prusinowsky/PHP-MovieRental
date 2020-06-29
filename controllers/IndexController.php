@@ -12,19 +12,4 @@ class IndexController {
         ]);
     }
 
-    public function show($id){
-        return view('movie/show.view.php', [
-            'id' => intval($id)
-        ]);
-    }
-    
-
-    public function edit($id){
-        return view('movie/edit.view.php');
-    }
-
-    public function delete($id){
-        return view('movie/delete.view.php');
-    }
-
 }

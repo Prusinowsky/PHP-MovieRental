@@ -5,6 +5,9 @@ require 'vendor/autoload.php';
 use Pecee\SimpleRouter\SimpleRouter;
 use Illuminate\Database\Capsule\Manager as Capsule;
   
+define('APP_PATH', __DIR__);
+define('APP_PUBLIC_PATH', __DIR__.'/public');
+
 global $db;
 global $config;
 global $router;

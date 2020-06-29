@@ -1,3 +1,7 @@
+<?php 
+    use Pecee\SimpleRouter\SimpleRouter as Router;
+?>
+
 <html>
     <head>
         <?php view_include('global/head.view.php') ?>
@@ -8,6 +12,7 @@
             <div class="mr-header">
                 <h1>Witaj! </h1>
                 <p>Sprawdź nasze filmy, które możesz u nas wypożyczyć. Jest ich trochę, możesz znaleźć je niżej.</p>
+                <a class="btn btn-success" href="<?php echo Router::getUrl('movie.create'); ?>">Dodaj film</a>
             </div>
             <div class="mr-movies d-flex justify-content-center flex-wrap">
                 <?php foreach($movies as $key => $movie) : ?>
