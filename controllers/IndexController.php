@@ -12,7 +12,9 @@ class IndexController {
      */
     public function index(){
         global $db;
+        // Pobranie filmów z bazy danych
         $movies = $db->query("SELECT * FROM `movies`");
+        // Zwrócenie widoku szablonu
         return view('movie/index.view.php', [
             'movies' => $movies
         ]);
